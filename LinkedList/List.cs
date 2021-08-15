@@ -7,7 +7,7 @@ namespace LinkedList
     class List
     {
         internal Node head;
-        internal void Add(int data)
+        internal void Append(int data)
         {
             //Object of Node
             Node node = new Node(data);
