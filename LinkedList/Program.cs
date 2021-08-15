@@ -14,8 +14,8 @@ namespace LinkedList
             Console.WriteLine("The linked list :");
             list.Display();
 
-            list.Search(30);
-            
+            list.Insert(3, 40);
+            Console.WriteLine("The list after inserting value :");
             list.Display();
         }
     }

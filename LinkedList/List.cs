@@ -12,7 +12,7 @@ namespace LinkedList
             //Object of Node
             Node node = new Node(data);
 
- 
+
             if (this.head == null)
                 this.head = node;
             else
@@ -26,39 +26,51 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Inserted in the Linked List", node.data);
         }
+        public void Insert(int position, int data)
+        {
+            Node node = new Node(data);
 
-        internal Node Search(int value)
-        {
-            int index = 0;
-            while (this.head != null)
+            if (position == 1)
             {
-                index++;
-                if (this.head.data == value)
-                {
-                    
-                    Console.WriteLine(value + " the value is in "+ index + " place");
-                    return this.head;
-                }
-                this.head = this.head.next;
+                node.next = head;
+                head = node;
             }
-            return null;
-           
-        }
-        internal void Display()
-        {
-            if (this.head == null)
-                Console.WriteLine("list is empty.");
+            else if (position < 1)
+            {
+                Console.WriteLine("Invalid Position");
+            }
+
             else
             {
                 Node temp = head;
-                while (temp != null)
+
+                while (position > 2)
                 {
-                    Console.WriteLine("Data : " + temp.data);
                     temp = temp.next;
+                    position--;
+                }
+                node.next = temp.next;
+                temp.next = node;
+            }
+        }
+
+            internal void Display()
+            {
+                if (this.head == null)
+                    Console.WriteLine("list is empty.");
+                else
+                {
+                    Node temp = head;
+                    while (temp != null)
+                    {
+                        Console.WriteLine("Data : " + temp.data);
+                        temp = temp.next;
+                    }
                 }
             }
         }
     }
-}
+
+
 
 
