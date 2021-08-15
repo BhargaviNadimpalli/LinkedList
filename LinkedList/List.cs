@@ -7,7 +7,7 @@ namespace LinkedList
     class List
     {
         internal Node head;
-        internal void Append(int data)
+        internal void Add(int data)
         {
             //Object of Node
             Node node = new Node(data);
@@ -26,32 +26,13 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Inserted in the Linked List", node.data);
         }
-        public void Insert(int position, int data)
+       
+        internal Node POP()
         {
-            Node node = new Node(data);
-
-            if (position == 1)
-            {
-                node.next = head;
-                head = node;
-            }
-            else if (position < 1)
-            {
-                Console.WriteLine("Invalid Position");
-            }
-
-            else
-            {
-                Node temp = head;
-
-                while (position > 2)
-                {
-                    temp = temp.next;
-                    position--;
-                }
-                node.next = temp.next;
-                temp.next = node;
-            }
+            if (this.head == null)
+                return null;
+            this.head = this.head.next;
+            return this.head;
         }
         internal void Display()
         {

@@ -8,10 +8,14 @@ namespace LinkedList
         {
             Console.WriteLine("Welcome to linked list programs");
             List list = new List();
-            list.Append(56);
-          
-            list.Append(70);
-            list.Insert(2, 30);
+            list.Add(56);
+            list.Add(30);
+            list.Add(70);
+            Console.WriteLine("The linked list :");
+            list.Display();
+
+            list.POP();
+            Console.WriteLine("After deleting first element :");
             list.Display();
         }
     }
