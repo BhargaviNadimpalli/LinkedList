@@ -53,8 +53,38 @@ namespace LinkedList
                 temp.next = node;
             }
         }
+        public void Delete(int data)
+        {
+            Node temp = head, a = null;
+            if (temp != null && temp.data == data)
+            {
+                head = temp.next;
+                return;
+            }
+            while (temp != null && temp.data != data)
+            {
+                a = temp;
+                temp = temp.next;
+            }
+            if (temp == null)
+                return;
+            a.next = temp.next;
+        }
+       
+        public int Size()
+        {
+            Node temp = head;
+            int size = 0;
+            
+            while (temp != null)
+            {
+                size++;
+                temp = temp.next;
+            }
+            return size;
+        }
 
-            internal void Display()
+        internal void Display()
             {
                 if (this.head == null)
                     Console.WriteLine("list is empty.");

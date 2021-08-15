@@ -13,9 +13,18 @@ namespace LinkedList
             list.Add(70);
             Console.WriteLine("The linked list :");
             list.Display();
-
+            ///inserting the value
             list.Insert(3, 40);
-            Console.WriteLine("The list after inserting value :");
+            Console.WriteLine("After inserting the value :");
+            list.Display();
+           ///deleting the value
+            list.Delete(40);
+            Console.WriteLine("After deleting the value :");
+            list.Display();
+
+            ///size of linkedlist
+            list.Size();
+            Console.WriteLine("The size of linkedlist is : ");
             list.Display();
         }
     }
