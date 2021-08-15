@@ -27,19 +27,22 @@ namespace LinkedList
             Console.WriteLine("{0} Inserted in the Linked List", node.data);
         }
 
-        internal Node LastElement()
+        internal Node Search(int value)
         {
-            if (head == null)
-                return null;
-            if (head.next == null)
-                return null;
-            Node node = head;
-            while (node.next.next != null)
+            int index = 0;
+            while (this.head != null)
             {
-                node = node.next;
+                index++;
+                if (this.head.data == value)
+                {
+                    
+                    Console.WriteLine(value + " the value is in "+ index + " place");
+                    return this.head;
+                }
+                this.head = this.head.next;
             }
-            node.next = null;
-            return head;
+            return null;
+           
         }
         internal void Display()
         {
