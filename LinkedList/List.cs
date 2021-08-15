@@ -26,13 +26,20 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Inserted in the Linked List", node.data);
         }
-       
-        internal Node POP()
+
+        internal Node LastElement()
         {
-            if (this.head == null)
+            if (head == null)
                 return null;
-            this.head = this.head.next;
-            return this.head;
+            if (head.next == null)
+                return null;
+            Node node = head;
+            while (node.next.next != null)
+            {
+                node = node.next;
+            }
+            node.next = null;
+            return head;
         }
         internal void Display()
         {

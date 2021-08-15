@@ -14,8 +14,8 @@ namespace LinkedList
             Console.WriteLine("The linked list :");
             list.Display();
 
-            list.POP();
-            Console.WriteLine("After deleting first element :");
+            list.LastElement();
+            Console.WriteLine("After deleting last element :");
             list.Display();
         }
     }
